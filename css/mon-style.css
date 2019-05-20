@@ -1,0 +1,4 @@
+.table>tbody>tr.active {
+  background: #123456;
+  color: #fff;
+}
