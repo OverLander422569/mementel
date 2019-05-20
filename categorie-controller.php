@@ -43,8 +43,10 @@
 			$result = conn()->query($sql);
 
 			if ($result === TRUE) {
+				//rediriger l'utilisateur vers la page principale
 				header("Location:index.php");	
 			}
+			// sinon on retourne une erreur
 			 else {
 				echo "erreur:".$sql;
 			}
@@ -59,19 +61,22 @@
 			$id = $_POST["categorie-id-modifier"];
 			
 			$sql = "";
-
+			
+			//si l'ID est vide, on insert la valeur de l'intitulé
 			if ($id===""){
 				$sql = "INSERT INTO categorie (intitule) VALUES ('".$intitule."');";
 			}
+			//Sinon on met à jour la valeur
 			else{
 				$sql= "UPDATE categorie SET intitule = '".$intitule."' WHERE ID = ".$id.";";
 			}
 			$result = conn()->query($sql);
 			
-
+			//rediriger l'utilisateur vers la page principale
 			if ($result === TRUE) {
 				header("Location:index.php");	
 			}
+			// sinon on retourne une erreurs
 			 else {
 				echo "erreur:".$sql;
 			}
