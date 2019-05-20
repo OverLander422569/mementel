@@ -54,8 +54,11 @@
 	}
 	//Requête ADD et UPDATE
 	elseif($_REQUEST ["query"] == "add-update"){
+
+		//On instancie les variable Id et Intitulé à null pour ne pas inscrire en dur les lignes à sélectionner
 		$id = "";
 		$intitule = "";
+
 		if ($_SERVER["REQUEST_METHOD"] == "POST") {
 			$intitule = $_POST["intitule"];
 			$id = $_POST["categorie-id-modifier"];
